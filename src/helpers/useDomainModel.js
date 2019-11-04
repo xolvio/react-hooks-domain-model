@@ -1,24 +1,24 @@
 import {useState} from 'react'
 
 export default function useDomainModel(model) {
-  const domainModel = {mutations: {}, queries: {}}
+  const [, stateChange] = useState(model.hash())
+
+  const domainModel = {queries: {}, mutations: {}}
 
   // queries get delegated since they don't update state
-  Object.keys(model.queries).forEach(
-    (query) =>
-      domainModel.queries[query] = (...args) =>
-        model.queries[query].apply(model, args)
-  );
+  Object.keys(model.queries).forEach((query) =>
+    domainModel.queries[query] = model.queries[query]
+  )
 
   // mutations use a hash to see if the model has changes
   Object.keys(model.mutations).forEach((mutation) => {
-    const [hash, stateChange] = useState(model.hash())
     domainModel.mutations[mutation] = (...args) => {
       const mutationOutput = model.mutations[mutation].apply(model, args)
-      stateChange(model.hash())
+      const newHash = model.hash()
+      stateChange(newHash)
       return mutationOutput
     }
-  });
+  })
 
-  return domainModel
+  return [domainModel.queries, domainModel.mutations]
 }
