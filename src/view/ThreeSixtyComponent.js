@@ -2,8 +2,8 @@ import React from 'react'
 import useDomainModel from '../helpers/useDomainModel'
 
 export default function ThreeSixtyComponent({model}) {
-  // const [queries, commands] = useDomainModel(model)
-  const [queries, commands] = useDomainProcess(model)
+  const [queries, commands] = useDomainModel(model)
+
 
   return (
     <>
