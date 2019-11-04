@@ -1,4 +1,4 @@
-Feature: Simple maths
+Feature: 360 Component
 
   Scenario: The user rotates the vehicle
     Given the component has had images authored

@@ -1,4 +1,5 @@
 export default function ThreeSixtyInteraction() {
+
   const images = []
   let selectedImage = 0
 
@@ -25,9 +26,10 @@ export default function ThreeSixtyInteraction() {
   }
 
   // useDomainModel interface implementation put here for convenience, can be extracted for purity
+  // TODO we should extract this into a TS interface of sorts
   return {
     hash: () => require('object-hash')({images, selectedImage}),
-    mutations: {addImage, nextImage, previousImage},
+    commands: {addImage, nextImage, previousImage},
     queries: {currentImage},
   }
 }

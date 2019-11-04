@@ -15,14 +15,14 @@ A few key points here:
 ```javascript
   return {
     hash: () => require('object-hash')({images, selectedImage}),
-    mutations: {addImage, rotateLeft, rotateRight},
+    commands: {addImage, rotateLeft, rotateRight},
     queries: {currentImage},
   }
 ```
 
 The hash is used to provide the `useDomainModel` hook with the knowledge if the model has changed. It's up to the developer to ensure the hashcode returns a unique value for the object state. The `object-hash` library does a great job of doing this if you pass it the attributes of the model. 
 
-The mutations are wired in by the `useDomainModel` such that any mutations call results in a rerender of the hooked react component.
+The commands are wired in by the `useDomainModel` such that any commands call results in a rerender of the hooked react component.
 
 The queries are delegated as is without any hooks since reading a value should not require a rerender.
 
