@@ -4,7 +4,10 @@
 No surprises here.
 
 `npm test`
-This will run Cucumber and focuses purely on the interaction model. The idea here is that the interaction domain is where a lot of the complexity is, so modeling and testing the interaction in isolation without the complications of the UI will mae it easier to reason about it and evolve it. 
+This will two things:
+1. Run Jest: Within the interaction domain context, the unit tests focus on the permutations and the more mundane implementation details of the interaction model such as making sure we don't return null when we reach the end of an array and so on. 
+
+2. Run Cucumber: This focuses on the complex parts of the interaction model. The idea here is that the interaction domain is where a lot of the complexity is, so modeling and testing the interaction in isolation without the complications of the UI will make it easier to reason about and evolve it. 
 
 `npm run storybook`
 Here you an see component rendered by React, and hooks are being used to "bind" the interaction domain model to the React component.
@@ -25,4 +28,3 @@ The hash is used to provide the `useDomainModel` hook with the knowledge if the 
 The commands are wired in by the `useDomainModel` such that any commands call results in a rerender of the hooked react component.
 
 The queries are delegated as is without any hooks since reading a value should not require a rerender.
-
