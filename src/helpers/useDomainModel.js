@@ -20,3 +20,5 @@ export default function useDomainModel(model) {
 
   return [domainModel.queries, domainModel.commands]
 }
+
+// TODO rewrite this to use Types, to provide an interface for commands/queries & hash, TDD it, and publish as an npm module
