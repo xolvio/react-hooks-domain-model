@@ -5,7 +5,6 @@
 
 // Create some infrastructure to deal with transport (Apollo/Fetch) for sending commands/queries to a remote API (GQL/REST):
 import useDomainModel from '../../helpers/useDomainModel'
-import React from 'react'
 
 const vehicleImages = remoteDomain(vehicleImagesAPIURL)
 const content = remoteDomain(contentAPIURL)
