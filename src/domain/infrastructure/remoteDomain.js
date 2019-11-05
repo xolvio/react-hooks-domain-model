@@ -1,6 +1,6 @@
 // TODO experiment
 // can we connect to a remote *business* domain model and allow it to be used here?
-// we can then have a HOC that works with this and that domain
+// we can then have a service that works with this and that domain
 // I'm thinking something like this:
 
 // Create some infrastructure to deal with transport (Apollo/Fetch) for sending commands/queries to a remote API (GQL/REST):
