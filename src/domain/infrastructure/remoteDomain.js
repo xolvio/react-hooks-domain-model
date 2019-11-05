@@ -4,8 +4,6 @@
 // I'm thinking something like this:
 
 // Create some infrastructure to deal with transport (Apollo/Fetch) for sending commands/queries to a remote API (GQL/REST):
-import useDomainModel from '../../helpers/useDomainModel'
-
 const vehicleImages = remoteDomain(vehicleImagesAPIURL)
 const content = remoteDomain(contentAPIURL)
 
