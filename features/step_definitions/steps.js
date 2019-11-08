@@ -1,8 +1,8 @@
 import {Given, Then, When} from 'cucumber'
 import expect from 'expect'
-import ThreeSixtyInteraction from '../../src/domain/model/ThreeSixtyInteraction'
+import root from '../../src/root'
 
-const {queries, commands} = ThreeSixtyInteraction()
+const {queries, commands} = root.threeSixtyInteractionModel
 
 Given('the component has had images authored', function () {
   commands.addImage('firstImage.jpg')

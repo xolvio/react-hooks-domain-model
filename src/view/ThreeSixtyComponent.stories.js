@@ -1,10 +1,12 @@
+import root from '../root'
+
 import React from 'react'
 import {storiesOf} from '@storybook/react'
 
 import ThreeSixtyComponent from './ThreeSixtyComponent'
-import ThreeSixtyInteraction from '../domain/model/ThreeSixtyInteraction'
 
-const model = ThreeSixtyInteraction()
+const model = root.threeSixtyInteractionModel
+
 model.commands.addImage('first')
 model.commands.addImage('second')
 model.commands.addImage('third')

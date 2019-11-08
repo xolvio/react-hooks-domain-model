@@ -1,9 +1,9 @@
-import ThreeSixtyInteraction from './ThreeSixtyInteraction'
+import root from '../../root'
 
 describe('ThreeSixtyInteraction', () => {
   describe('previousImage', () => {
     it('should stop on the first image', () => {
-      const {commands, queries} = ThreeSixtyInteraction()
+      const {commands, queries} = root.threeSixtyInteractionModel
       commands.addImage('firstImage')
 
       commands.previousImage()
@@ -13,7 +13,7 @@ describe('ThreeSixtyInteraction', () => {
   })
   describe('nextImage', () => {
     it('should stop on the final image', () => {
-      const {commands, queries} = ThreeSixtyInteraction()
+      const {commands, queries} = root.threeSixtyInteractionModel
       commands.addImage('firstImage')
       commands.addImage('finalImage')
 
