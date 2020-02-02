@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "dependencies": {
     "object-hash": "^2.0.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-domain-hooks": "^1.0.2"
   },
   "scripts": {
-    "test": "jest && babel-node --presets=@babel/react,@babel/preset-env node_modules/cucumber/bin/cucumber-js",
+    "test:unit:watch": "jest --watch",
+    "test:unit": "jest",
+    "test:domain": "babel-node --presets=@babel/react,@babel/preset-env node_modules/cucumber/bin/cucumber-js",
+    "test": "npm run test:unit && npm run test:domain",
     "storybook": "start-storybook -p 9009"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import useDomain from '../helpers/useDomain'
+import useDomain from 'react-domain-hooks'
 
 export default function ThreeSixtyComponent({model}) {
   // ultra thin component with UI logic only. Interaction model is abstracted into models that use a CQRS pattern
